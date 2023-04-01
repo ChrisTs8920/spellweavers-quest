@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cisarl8ofkufm"]
+
+[ext_resource type="AudioStream" uid="uid://dliiexyg6cstl" path="res://assets/sounds/water_drip.wav" id="1_kks1j"]
+
+[node name="water_drip" type="AudioStreamPlayer"]
+stream = ExtResource("1_kks1j")
