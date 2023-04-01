@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://cynb148ynrrbx"]
+
+[ext_resource type="Texture2D" uid="uid://bumfxjj1y3vnm" path="res://assets/rock01.png" id="1_f6yg7"]
+[ext_resource type="Texture2D" uid="uid://xg8lh03nbnjo" path="res://assets/rock01_n.png" id="2_hl6ga"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_p4ge4"]
+diffuse_texture = ExtResource("1_f6yg7")
+normal_texture = ExtResource("2_hl6ga")
+
+[node name="rock01" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_p4ge4")

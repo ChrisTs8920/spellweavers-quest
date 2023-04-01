@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh4q3jdtery20"]
+
+[ext_resource type="AudioStream" uid="uid://b66vj6ggquhhd" path="res://assets/sounds/ambient.wav" id="1_4gepv"]
+
+[node name="ambient" type="AudioStreamPlayer"]
+stream = ExtResource("1_4gepv")
+volume_db = -15.0
