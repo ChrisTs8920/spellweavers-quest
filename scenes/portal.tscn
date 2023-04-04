@@ -1,35 +1,36 @@
-[gd_scene load_steps=19 format=3 uid="uid://b1ift6rh6lwdq"]
+[gd_scene load_steps=22 format=3 uid="uid://civnvs6ycoxy8"]
 
 [ext_resource type="Script" path="res://scenes/portal.gd" id="1_4qw1h"]
 [ext_resource type="Shader" path="res://tiles.gdshader" id="2_xslqx"]
-[ext_resource type="Texture2D" uid="uid://bx3cy6wxguj62" path="res://assets/levels1_5/portal01_n.png" id="3_8a3k0"]
-[ext_resource type="Texture2D" uid="uid://du44607nqff3u" path="res://assets/levels1_5/portal01.png" id="4_5kucd"]
-[ext_resource type="Texture2D" uid="uid://ca6d2fbb73t0h" path="res://assets/levels1_5/portal02.png" id="5_lh1fj"]
-[ext_resource type="Texture2D" uid="uid://dhiwbq2ea8me8" path="res://assets/levels1_5/portal03.png" id="6_i2cem"]
-[ext_resource type="Texture2D" uid="uid://d0jknp1374472" path="res://assets/levels6_10/portal01.png" id="7_nejn5"]
-[ext_resource type="Texture2D" uid="uid://dkty4s47w4a7e" path="res://assets/levels6_10/portal02.png" id="8_c6xut"]
-[ext_resource type="Texture2D" uid="uid://djp7r412taa85" path="res://assets/levels6_10/portal03.png" id="9_v5jal"]
-[ext_resource type="Texture2D" uid="uid://dq1d7xmiqhwsp" path="res://assets/levels11_15/portal01.png" id="10_2gxls"]
-[ext_resource type="Texture2D" uid="uid://culxek5do8pah" path="res://assets/levels11_15/portal02.png" id="11_xbajp"]
-[ext_resource type="Texture2D" uid="uid://cyc5mh207t1vq" path="res://assets/levels11_15/portal03.png" id="12_3yyn4"]
-[ext_resource type="Texture2D" uid="uid://dibj53i6bb0ge" path="res://assets/2d_light.webp" id="13_67qhy"]
+[ext_resource type="Texture2D" uid="uid://bx3cy6wxguj62" path="res://assets/portal/portal01_n.png" id="3_wrhva"]
+[ext_resource type="Texture2D" uid="uid://du44607nqff3u" path="res://assets/portal/portal01.png" id="4_oglio"]
+[ext_resource type="Texture2D" uid="uid://ca6d2fbb73t0h" path="res://assets/portal/portal02.png" id="5_e4tle"]
+[ext_resource type="Texture2D" uid="uid://dhiwbq2ea8me8" path="res://assets/portal/portal03.png" id="6_vxjuc"]
+[ext_resource type="Texture2D" uid="uid://d0jknp1374472" path="res://assets/portal/portal01y.png" id="7_fgnt7"]
+[ext_resource type="Texture2D" uid="uid://dkty4s47w4a7e" path="res://assets/portal/portal02y.png" id="8_rma5h"]
+[ext_resource type="Texture2D" uid="uid://djp7r412taa85" path="res://assets/portal/portal03y.png" id="9_rem0e"]
+[ext_resource type="Texture2D" uid="uid://dq1d7xmiqhwsp" path="res://assets/portal/portal01r.png" id="10_khj5p"]
+[ext_resource type="Texture2D" uid="uid://culxek5do8pah" path="res://assets/portal/portal02r.png" id="11_4m7d7"]
+[ext_resource type="Texture2D" uid="uid://cyc5mh207t1vq" path="res://assets/portal/portal03r.png" id="12_sf82x"]
+[ext_resource type="Texture2D" uid="uid://cx0i38qq0h2yr" path="res://assets/portal/circle_05.png" id="13_1sjbm"]
 [ext_resource type="AudioStream" uid="uid://reivae6hd1ev" path="res://assets/sounds/portal_enter.wav" id="14_k8o85"]
+[ext_resource type="Texture2D" uid="uid://br5n47x25amkm" path="res://assets/portal/light_01.png" id="14_kccx4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t87iu"]
 shader = ExtResource("2_xslqx")
-shader_parameter/normal_map = ExtResource("3_8a3k0")
+shader_parameter/normal_map = ExtResource("3_wrhva")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5sr33"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_5kucd")
+"texture": ExtResource("4_oglio")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_lh1fj")
+"texture": ExtResource("5_e4tle")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_i2cem")
+"texture": ExtResource("6_vxjuc")
 }],
 "loop": true,
 "name": &"portal01",
@@ -37,13 +38,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_nejn5")
+"texture": ExtResource("7_fgnt7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_c6xut")
+"texture": ExtResource("8_rma5h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_v5jal")
+"texture": ExtResource("9_rem0e")
 }],
 "loop": true,
 "name": &"portal02",
@@ -51,13 +52,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_2gxls")
+"texture": ExtResource("10_khj5p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_xbajp")
+"texture": ExtResource("11_4m7d7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_3yyn4")
+"texture": ExtResource("12_sf82x")
 }],
 "loop": true,
 "name": &"portal03",
@@ -66,6 +67,13 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_af4n3"]
 radius = 22.8254
+
+[sub_resource type="Gradient" id="Gradient_fwnwr"]
+offsets = PackedFloat32Array(0, 0.496296, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f24kh"]
+gradient = SubResource("Gradient_fwnwr")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vr8a0"]
 emission_shape = 2
@@ -76,9 +84,10 @@ gravity = Vector3(0, -98, 0)
 initial_velocity_max = 50.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
-scale_min = 7.0
-scale_max = 8.0
+scale_min = 0.05
+scale_max = 0.05
 color = Color(0.678431, 0.678431, 0.929412, 1)
+color_ramp = SubResource("GradientTexture1D_f24kh")
 
 [node name="portal" type="Area2D"]
 script = ExtResource("1_4qw1h")
@@ -93,8 +102,8 @@ position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_af4n3")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-amount = 4
 process_material = SubResource("ParticleProcessMaterial_vr8a0")
+texture = ExtResource("13_1sjbm")
 fixed_fps = 60
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
@@ -102,9 +111,8 @@ color = Color(0.490196, 0.490196, 0.890196, 1)
 energy = 3.0
 shadow_enabled = true
 shadow_filter = 2
-texture = ExtResource("13_67qhy")
-texture_scale = 1.5
-height = 250.0
+texture = ExtResource("14_kccx4")
+height = 300.0
 
 [node name="sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_k8o85")

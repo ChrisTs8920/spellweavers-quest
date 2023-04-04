@@ -11,11 +11,12 @@ func _ready():
 	
 	if (int(i) >= 6 and int(i) < 11):
 		$AnimatedSprite2D.animation = "portal02"
-		$GPUParticles2D.get_process_material().color = Color(255, 247, 0, 255)
+		$GPUParticles2D.get_process_material().color = Color(0.9, 0.9, 0, 1)
+		#$PointLight2D.color = Color(0.4, 0.4, 0, 1)
 	if int(i) >= 11:
 		$AnimatedSprite2D.animation = "portal03"
-		$GPUParticles2D.get_process_material().color = Color(200, 0, 0, 255)
-		$PointLight2D.color = Color(.4, 0, 0, 255)
+		$GPUParticles2D.get_process_material().color = Color(0.9, 0, 0, 1)
+		$PointLight2D.color = Color(0.4, 0, 0, 1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,8 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://cxwy1kwwh6if6"]
+[gd_scene load_steps=22 format=3 uid="uid://ci5j80u36tk27"]
 
 [ext_resource type="Texture2D" uid="uid://70dwx0ddwtkx" path="res://assets/levels6_10/block.png" id="1_1nrua"]
 [ext_resource type="Texture2D" uid="uid://c0hj8f3iijot6" path="res://assets/levels1_5/block_n.png" id="2_l1hli"]
-[ext_resource type="PackedScene" uid="uid://b1ift6rh6lwdq" path="res://scenes/portal.tscn" id="3_aepv2"]
+[ext_resource type="PackedScene" uid="uid://civnvs6ycoxy8" path="res://scenes/portal.tscn" id="3_aepv2"]
 [ext_resource type="Texture2D" uid="uid://cqrn5ls8lhdov" path="res://assets/spikes.png" id="5_aiyrh"]
 [ext_resource type="PackedScene" uid="uid://cynb148ynrrbx" path="res://scenes/rock01.tscn" id="6_e205v"]
 [ext_resource type="Shader" path="res://tiles.gdshader" id="6_xebsy"]

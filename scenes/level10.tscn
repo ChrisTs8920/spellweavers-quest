@@ -1,11 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://du0x6f16qmyjx"]
+[gd_scene load_steps=24 format=3 uid="uid://c16oldv7shiud"]
 
 [ext_resource type="Texture2D" uid="uid://70dwx0ddwtkx" path="res://assets/levels6_10/block.png" id="1_vowd1"]
 [ext_resource type="Texture2D" uid="uid://c0hj8f3iijot6" path="res://assets/levels1_5/block_n.png" id="2_wd473"]
 [ext_resource type="Shader" path="res://tiles.gdshader" id="4_tt286"]
 [ext_resource type="PackedScene" uid="uid://crh6mn1fg1utf" path="res://scenes/player.tscn" id="5_b8x1e"]
 [ext_resource type="Texture2D" uid="uid://cqrn5ls8lhdov" path="res://assets/spikes.png" id="5_iqhfn"]
-[ext_resource type="PackedScene" uid="uid://b1ift6rh6lwdq" path="res://scenes/portal.tscn" id="6_anca5"]
+[ext_resource type="PackedScene" uid="uid://civnvs6ycoxy8" path="res://scenes/portal.tscn" id="6_anca5"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dncfy"]
 diffuse_texture = ExtResource("1_vowd1")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c07o1byq4i6m2"]
+[gd_scene load_steps=8 format=3 uid="uid://c07o1byq4i6m2"]
 
 [ext_resource type="Texture2D" uid="uid://b5r7fc28fefdp" path="res://assets/power_up/power_up01.png" id="1_bm8wo"]
 [ext_resource type="Script" path="res://scenes/power_up.gd" id="1_o0358"]
@@ -22,6 +22,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xbxw"]
 size = Vector2(56, 93)
 
+[sub_resource type="Theme" id="Theme_6w6qp"]
+
 [node name="power_up" type="Area2D"]
 scale = Vector2(0.6, 0.6)
 script = ExtResource("1_o0358")
@@ -31,7 +33,7 @@ sprite_frames = SubResource("SpriteFrames_cfftd")
 frame_progress = 0.866033
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 14.5)
+position = Vector2(0, 13.3333)
 shape = SubResource("RectangleShape2D_0xbxw")
 
 [node name="PopupPanel" type="PopupPanel" parent="."]
@@ -39,6 +41,7 @@ disable_3d = true
 position = Vector2i(100, 100)
 size = Vector2i(193, 50)
 borderless = false
+theme = SubResource("Theme_6w6qp")
 
 [node name="Label" type="Label" parent="PopupPanel"]
 offset_left = 4.0

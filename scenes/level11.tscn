@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cbk654tks26h0" path="res://assets/levels11_15/block.png" id="1_h7ly1"]
 [ext_resource type="Texture2D" uid="uid://c0hj8f3iijot6" path="res://assets/levels1_5/block_n.png" id="2_0ru5w"]
-[ext_resource type="PackedScene" uid="uid://b1ift6rh6lwdq" path="res://scenes/portal.tscn" id="3_uqnxf"]
+[ext_resource type="PackedScene" uid="uid://civnvs6ycoxy8" path="res://scenes/portal.tscn" id="3_uqnxf"]
 [ext_resource type="Shader" path="res://tiles.gdshader" id="4_auyvk"]
 [ext_resource type="PackedScene" uid="uid://crh6mn1fg1utf" path="res://scenes/player.tscn" id="7_gq6ek"]
 

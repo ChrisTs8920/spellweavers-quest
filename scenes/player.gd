@@ -59,7 +59,8 @@ func _physics_process(delta):
 
 func _on_spikes_body_entered(body):
 	if body is CharacterBody2D:
-		#play a sound
+		$hit.play()
 		var name = get_tree().get_current_scene().get_name()
+		await $hit.finished
 		get_tree().change_scene_to_file("res://scenes/" + name + ".tscn")
 

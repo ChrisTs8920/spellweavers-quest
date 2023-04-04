@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://crh6mn1fg1utf"]
+[gd_scene load_steps=15 format=3 uid="uid://crh6mn1fg1utf"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_4yynh"]
 [ext_resource type="Texture2D" uid="uid://cp4at8mdnljbe" path="res://assets/player/player.png" id="2_gtvv4"]
 [ext_resource type="Texture2D" uid="uid://impvjsd8skbs" path="res://assets/player/player_move.png" id="3_n52kw"]
 [ext_resource type="Texture2D" uid="uid://dibj53i6bb0ge" path="res://assets/2d_light.webp" id="4_0utld"]
 [ext_resource type="AudioStream" uid="uid://c7tjbbr3a6abv" path="res://assets/sounds/player_jump.mp3" id="5_keadl"]
+[ext_resource type="AudioStream" uid="uid://bw2ptkqm5wh6" path="res://assets/player/hit.wav" id="6_4orhs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3hsgq"]
 
@@ -96,7 +97,7 @@ shadow_enabled = true
 shadow_filter = 2
 texture = ExtResource("4_0utld")
 texture_scale = 10.0
-height = 250.0
+height = 300.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -80)
@@ -104,4 +105,8 @@ position_smoothing_enabled = true
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_keadl")
+volume_db = -10.0
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4orhs")
 volume_db = -10.0
