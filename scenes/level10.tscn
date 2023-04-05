@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c16oldv7shiud"]
+[gd_scene load_steps=25 format=3 uid="uid://c16oldv7shiud"]
 
 [ext_resource type="Texture2D" uid="uid://70dwx0ddwtkx" path="res://assets/levels6_10/block.png" id="1_vowd1"]
 [ext_resource type="Texture2D" uid="uid://c0hj8f3iijot6" path="res://assets/levels1_5/block_n.png" id="2_wd473"]
@@ -10,6 +10,27 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_dncfy"]
 diffuse_texture = ExtResource("1_vowd1")
 normal_texture = ExtResource("2_wd473")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jbnuk"]
+lifetime_randomness = 0.5
+emission_shape = 3
+emission_box_extents = Vector3(600, 1, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 200.0
+linear_accel_max = 500.0
+scale_min = 3.0
+scale_max = 3.0
+color = Color(0, 0.792157, 1, 1)
+collision_mode = 1
+collision_friction = 1.0
+collision_bounce = 0.3
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iita3"]
 shader = ExtResource("4_tt286")
@@ -173,6 +194,15 @@ offset_right = 1338.0
 offset_bottom = -2677.0
 texture = SubResource("CanvasTexture_dncfy")
 stretch_mode = 1
+
+[node name="droplets" type="GPUParticles2D" parent="."]
+position = Vector2(208, -3264)
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_jbnuk")
+lifetime = 6.0
+preprocess = 2.0
+fixed_fps = 60
+visibility_rect = Rect2(-100, -100, 600, 5000)
 
 [node name="portal" parent="." instance=ExtResource("6_anca5")]
 position = Vector2(231, -3099)

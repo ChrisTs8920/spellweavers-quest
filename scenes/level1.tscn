@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://tebgytbrlftf"]
+[gd_scene load_steps=21 format=3 uid="uid://tebgytbrlftf"]
 
 [ext_resource type="PackedScene" uid="uid://civnvs6ycoxy8" path="res://scenes/portal.tscn" id="1_myx5p"]
 [ext_resource type="PackedScene" uid="uid://crh6mn1fg1utf" path="res://scenes/player.tscn" id="2_gskpo"]
@@ -26,6 +26,27 @@ func _process(delta):
 [sub_resource type="CanvasTexture" id="CanvasTexture_nb2k1"]
 diffuse_texture = ExtResource("2_yuncw")
 normal_texture = ExtResource("3_vy4dh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f0s1y"]
+lifetime_randomness = 0.5
+emission_shape = 3
+emission_box_extents = Vector3(600, 1, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 200.0
+linear_accel_max = 500.0
+scale_min = 3.0
+scale_max = 3.0
+color = Color(0, 0.792157, 1, 1)
+collision_mode = 1
+collision_friction = 1.0
+collision_bounce = 0.3
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7nmwk"]
 shader = ExtResource("6_27w0b")
@@ -105,11 +126,20 @@ offset_bottom = 596.0
 texture = SubResource("CanvasTexture_nb2k1")
 stretch_mode = 1
 
-[node name="portal" parent="." instance=ExtResource("1_myx5p")]
-position = Vector2(1023, 509)
-
 [node name="rock01" parent="." instance=ExtResource("6_ckgor")]
 position = Vector2(325, 544)
+
+[node name="droplets" type="GPUParticles2D" parent="."]
+position = Vector2(589, 75)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_f0s1y")
+lifetime = 6.0
+preprocess = 2.0
+fixed_fps = 60
+visibility_rect = Rect2(-100, -100, 600, 600)
+
+[node name="portal" parent="." instance=ExtResource("1_myx5p")]
+position = Vector2(1023, 509)
 
 [node name="stalac" parent="." instance=ExtResource("7_hkr6q")]
 position = Vector2(544, 224)

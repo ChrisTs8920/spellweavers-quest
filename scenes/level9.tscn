@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ci5j80u36tk27"]
+[gd_scene load_steps=23 format=3 uid="uid://ci5j80u36tk27"]
 
 [ext_resource type="Texture2D" uid="uid://70dwx0ddwtkx" path="res://assets/levels6_10/block.png" id="1_1nrua"]
 [ext_resource type="Texture2D" uid="uid://c0hj8f3iijot6" path="res://assets/levels1_5/block_n.png" id="2_l1hli"]
@@ -12,6 +12,27 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_dlwhr"]
 diffuse_texture = ExtResource("1_1nrua")
 normal_texture = ExtResource("2_l1hli")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6rxrb"]
+lifetime_randomness = 0.5
+emission_shape = 3
+emission_box_extents = Vector3(1000, 1, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 200.0
+linear_accel_max = 500.0
+scale_min = 3.0
+scale_max = 3.0
+color = Color(0, 0.792157, 1, 1)
+collision_mode = 1
+collision_friction = 1.0
+collision_bounce = 0.3
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_afjqj"]
 shader = ExtResource("6_xebsy")
@@ -141,6 +162,24 @@ offset_right = 4461.0
 offset_bottom = 936.0
 texture = SubResource("CanvasTexture_dlwhr")
 stretch_mode = 1
+
+[node name="droplets1" type="GPUParticles2D" parent="."]
+position = Vector2(2312, -296)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_6rxrb")
+lifetime = 6.0
+preprocess = 2.0
+fixed_fps = 60
+visibility_rect = Rect2(-100, -100, 1200, 1200)
+
+[node name="droplets2" type="GPUParticles2D" parent="."]
+position = Vector2(-360, 192)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_6rxrb")
+lifetime = 6.0
+preprocess = 2.0
+fixed_fps = 60
+visibility_rect = Rect2(-100, -100, 600, 600)
 
 [node name="portal" parent="." instance=ExtResource("3_aepv2")]
 modulate = Color(1, 0.968627, 0.427451, 1)
