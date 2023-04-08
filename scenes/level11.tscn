@@ -1,10 +1,15 @@
-[gd_scene load_steps=21 format=3 uid="uid://k0ymvku83g8"]
+[gd_scene load_steps=26 format=3 uid="uid://k0ymvku83g8"]
 
 [ext_resource type="Texture2D" uid="uid://cbk654tks26h0" path="res://assets/levels11_15/block.png" id="1_h7ly1"]
 [ext_resource type="Texture2D" uid="uid://c0hj8f3iijot6" path="res://assets/levels1_5/block_n.png" id="2_0ru5w"]
+[ext_resource type="Script" path="res://scenes/power_up.gd" id="3_naahd"]
 [ext_resource type="PackedScene" uid="uid://civnvs6ycoxy8" path="res://scenes/portal.tscn" id="3_uqnxf"]
+[ext_resource type="Texture2D" uid="uid://b5r7fc28fefdp" path="res://assets/power_up/power_up01.png" id="4_823dl"]
 [ext_resource type="Shader" path="res://tiles.gdshader" id="4_auyvk"]
+[ext_resource type="Texture2D" uid="uid://di0qpy7fu4ock" path="res://assets/power_up/power_up02.png" id="5_ycojl"]
+[ext_resource type="AudioStream" uid="uid://cer483nfhqm2m" path="res://assets/sounds/power_pickup.mp3" id="6_drlar"]
 [ext_resource type="PackedScene" uid="uid://crh6mn1fg1utf" path="res://scenes/player.tscn" id="7_gq6ek"]
+[ext_resource type="PackedScene" uid="uid://dvfb7b8w23exe" path="res://scenes/pause.tscn" id="10_ugsj5"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jiega"]
 diffuse_texture = ExtResource("1_h7ly1")
@@ -24,6 +29,25 @@ color = Color(0.751831, 0.74436, 0.736904, 1)
 collision_mode = 1
 collision_friction = 0.5
 collision_bounce = 0.1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cfftd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_823dl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ycojl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xbxw"]
+size = Vector2(56, 93)
+
+[sub_resource type="Theme" id="Theme_6w6qp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0xls6"]
 shader = ExtResource("4_auyvk")
@@ -96,17 +120,6 @@ sources/1 = SubResource("TileSetAtlasSource_c4308")
 sources/0 = SubResource("TileSetAtlasSource_xc43k")
 pattern_0 = SubResource("TileMapPattern_lqiph")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1487l"]
-size = Vector2(194, 56)
-
-[sub_resource type="Gradient" id="Gradient_jccsn"]
-colors = PackedColorArray(0.521569, 0.105882, 0, 0.588235, 1, 0.668667, 0.29, 0.627451)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rqaed"]
-gradient = SubResource("Gradient_jccsn")
-fill_from = Vector2(0, 1)
-fill_to = Vector2(0, 0)
-
 [node name="level11" type="Node2D"]
 
 [node name="background" type="TextureRect" parent="."]
@@ -127,6 +140,40 @@ preprocess = 2.0
 fixed_fps = 60
 visibility_rect = Rect2(-100, -100, 800, 800)
 
+[node name="power_up" type="Area2D" parent="."]
+position = Vector2(608, 600)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("3_naahd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="power_up"]
+sprite_frames = SubResource("SpriteFrames_cfftd")
+frame_progress = 0.866033
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="power_up"]
+position = Vector2(0, 13.3333)
+shape = SubResource("RectangleShape2D_0xbxw")
+
+[node name="PopupPanel" type="PopupPanel" parent="power_up"]
+disable_3d = true
+position = Vector2i(100, 100)
+size = Vector2i(193, 50)
+borderless = false
+theme = SubResource("Theme_6w6qp")
+
+[node name="Label" type="Label" parent="power_up/PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 56.0
+text = "You can now change size!
+(Using Q and E)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pickup" type="AudioStreamPlayer" parent="power_up"]
+stream = ExtResource("6_drlar")
+volume_db = -10.0
+
 [node name="portal" parent="." instance=ExtResource("3_uqnxf")]
 modulate = Color(1, 0.968627, 0.419608, 1)
 position = Vector2(1013, 503)
@@ -144,17 +191,7 @@ position = Vector2(98, 542)
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.392157, 0.392157, 0.392157, 1)
 
-[node name="lava" type="Area2D" parent="."]
-visible = false
-position = Vector2(395, 545)
+[node name="pause" parent="." instance=ExtResource("10_ugsj5")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lava"]
-position = Vector2(147, 65)
-shape = SubResource("RectangleShape2D_1487l")
-
-[node name="ColorRect" type="TextureRect" parent="lava"]
-offset_left = 53.0
-offset_top = 36.0
-offset_right = 374.0
-offset_bottom = 220.0
-texture = SubResource("GradientTexture2D_rqaed")
+[connection signal="body_entered" from="power_up" to="power_up" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="power_up" to="player" method="set_power_up_2"]

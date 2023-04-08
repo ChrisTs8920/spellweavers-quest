@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://tebgytbrlftf"]
+[gd_scene load_steps=21 format=3 uid="uid://0un0jjd1kwq5"]
 
+[ext_resource type="PackedScene" uid="uid://dvfb7b8w23exe" path="res://scenes/pause.tscn" id="1_dmjp1"]
 [ext_resource type="PackedScene" uid="uid://civnvs6ycoxy8" path="res://scenes/portal.tscn" id="1_myx5p"]
 [ext_resource type="PackedScene" uid="uid://crh6mn1fg1utf" path="res://scenes/player.tscn" id="2_gskpo"]
 [ext_resource type="Texture2D" uid="uid://cnpuenbnkr0s7" path="res://assets/levels1_5/block.png" id="2_yuncw"]
@@ -7,7 +8,6 @@
 [ext_resource type="Shader" path="res://tiles.gdshader" id="6_27w0b"]
 [ext_resource type="PackedScene" uid="uid://cynb148ynrrbx" path="res://scenes/rock01.tscn" id="6_ckgor"]
 [ext_resource type="PackedScene" uid="uid://ce2aab6tk16ip" path="res://scenes/stalac.tscn" id="7_hkr6q"]
-[ext_resource type="PackedScene" uid="uid://dvfb7b8w23exe" path="res://assets/pause.tscn" id="8_4ic0f"]
 
 [sub_resource type="GDScript" id="GDScript_y5r46"]
 script/source = "extends Node2D
@@ -157,5 +157,4 @@ position = Vector2(107, 541)
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.392157, 0.392157, 0.392157, 1)
 
-[node name="pause" parent="." instance=ExtResource("8_4ic0f")]
-visible = false
+[node name="pause" parent="." instance=ExtResource("1_dmjp1")]

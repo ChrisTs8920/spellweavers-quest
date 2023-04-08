@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cugybkeqwmgw8"]
+[gd_scene load_steps=21 format=3 uid="uid://cugybkeqwmgw8"]
 
 [ext_resource type="PackedScene" uid="uid://civnvs6ycoxy8" path="res://scenes/portal.tscn" id="1_s6fxd"]
 [ext_resource type="Texture2D" uid="uid://cqrn5ls8lhdov" path="res://assets/spikes.png" id="2_0hrc0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c0hj8f3iijot6" path="res://assets/levels1_5/block_n.png" id="3_v4np6"]
 [ext_resource type="PackedScene" uid="uid://ce2aab6tk16ip" path="res://scenes/stalac.tscn" id="4_fnk53"]
 [ext_resource type="Shader" path="res://tiles.gdshader" id="5_84iry"]
+[ext_resource type="PackedScene" uid="uid://dvfb7b8w23exe" path="res://scenes/pause.tscn" id="8_dwqij"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dncfy"]
 diffuse_texture = ExtResource("2_dets1")
@@ -150,5 +151,7 @@ position = Vector2(128, 584)
 [node name="spikes_hitbox" type="CollisionShape2D" parent="spikes"]
 position = Vector2(224.5, 45.5)
 shape = SubResource("RectangleShape2D_y505x")
+
+[node name="pause" parent="." instance=ExtResource("8_dwqij")]
 
 [connection signal="body_entered" from="spikes" to="player" method="_on_spikes_body_entered"]

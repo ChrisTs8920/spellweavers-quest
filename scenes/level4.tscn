@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://sa1ny1oty7nd"]
+[gd_scene load_steps=22 format=3 uid="uid://sa1ny1oty7nd"]
 
 [ext_resource type="Texture2D" uid="uid://cnpuenbnkr0s7" path="res://assets/levels1_5/block.png" id="1_1db5y"]
 [ext_resource type="PackedScene" uid="uid://civnvs6ycoxy8" path="res://scenes/portal.tscn" id="2_jocqd"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://crh6mn1fg1utf" path="res://scenes/player.tscn" id="3_llrhh"]
 [ext_resource type="PackedScene" uid="uid://ce2aab6tk16ip" path="res://scenes/stalac.tscn" id="4_b4ab0"]
 [ext_resource type="Shader" path="res://tiles.gdshader" id="5_1lslv"]
+[ext_resource type="PackedScene" uid="uid://dvfb7b8w23exe" path="res://scenes/pause.tscn" id="8_dqxbf"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_xcqv1"]
 diffuse_texture = ExtResource("1_1db5y")
@@ -153,5 +154,7 @@ shape = SubResource("RectangleShape2D_lkjt2")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.392157, 0.392157, 0.392157, 1)
+
+[node name="pause" parent="." instance=ExtResource("8_dqxbf")]
 
 [connection signal="body_entered" from="spikes" to="player" method="_on_spikes_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dopbyjtxlkhga"]
+[gd_scene load_steps=20 format=3 uid="uid://dopbyjtxlkhga"]
 
 [ext_resource type="PackedScene" uid="uid://civnvs6ycoxy8" path="res://scenes/portal.tscn" id="1_gaand"]
 [ext_resource type="Texture2D" uid="uid://70dwx0ddwtkx" path="res://assets/levels6_10/block.png" id="2_bbab5"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://crh6mn1fg1utf" path="res://scenes/player.tscn" id="3_y5tm7"]
 [ext_resource type="Shader" path="res://tiles.gdshader" id="4_aoog1"]
 [ext_resource type="PackedScene" uid="uid://c07o1byq4i6m2" path="res://scenes/power_up.tscn" id="7_4sk8e"]
+[ext_resource type="PackedScene" uid="uid://dvfb7b8w23exe" path="res://scenes/pause.tscn" id="8_6845l"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0gv4q"]
 diffuse_texture = ExtResource("2_bbab5")
@@ -141,4 +142,6 @@ color = Color(0.392157, 0.392157, 0.392157, 1)
 [node name="power_up" parent="." instance=ExtResource("7_4sk8e")]
 position = Vector2(416, 536)
 
-[connection signal="body_entered" from="power_up" to="player" method="set_power_up" binds= [true]]
+[node name="pause" parent="." instance=ExtResource("8_6845l")]
+
+[connection signal="body_entered" from="power_up" to="player" method="set_power_up_1"]

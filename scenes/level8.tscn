@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://nc5cdd4ra3bv"]
+[gd_scene load_steps=21 format=3 uid="uid://nc5cdd4ra3bv"]
 
 [ext_resource type="PackedScene" uid="uid://civnvs6ycoxy8" path="res://scenes/portal.tscn" id="1_frusm"]
 [ext_resource type="Texture2D" uid="uid://cqrn5ls8lhdov" path="res://assets/spikes.png" id="2_ut1qs"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://crh6mn1fg1utf" path="res://scenes/player.tscn" id="4_rpdvn"]
 [ext_resource type="PackedScene" uid="uid://bn1a6ac4uq52m" path="res://scenes/rock02.tscn" id="5_2oc2h"]
 [ext_resource type="Shader" path="res://tiles.gdshader" id="6_nuoyu"]
+[ext_resource type="PackedScene" uid="uid://dvfb7b8w23exe" path="res://scenes/pause.tscn" id="9_gsvb6"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dlwhr"]
 diffuse_texture = ExtResource("3_uhmkh")
@@ -149,3 +150,5 @@ position = Vector2(98, 542)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.392157, 0.392157, 0.392157, 1)
+
+[node name="pause" parent="." instance=ExtResource("9_gsvb6")]
