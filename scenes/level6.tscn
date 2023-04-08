@@ -4,14 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://70dwx0ddwtkx" path="res://assets/levels6_10/block.png" id="2_bbab5"]
 [ext_resource type="Texture2D" uid="uid://cqrn5ls8lhdov" path="res://assets/spikes.png" id="2_xm6ni"]
 [ext_resource type="Texture2D" uid="uid://c0hj8f3iijot6" path="res://assets/levels1_5/block_n.png" id="3_kboat"]
+[ext_resource type="Texture2D" uid="uid://ce80fawm5rrn5" path="res://assets/levels6_10/bgnd.png" id="3_socqi"]
 [ext_resource type="PackedScene" uid="uid://crh6mn1fg1utf" path="res://scenes/player.tscn" id="3_y5tm7"]
 [ext_resource type="Shader" path="res://tiles.gdshader" id="4_aoog1"]
 [ext_resource type="PackedScene" uid="uid://c07o1byq4i6m2" path="res://scenes/power_up.tscn" id="7_4sk8e"]
 [ext_resource type="PackedScene" uid="uid://dvfb7b8w23exe" path="res://scenes/pause.tscn" id="8_6845l"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_0gv4q"]
-diffuse_texture = ExtResource("2_bbab5")
-normal_texture = ExtResource("3_kboat")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3vyef"]
 lifetime_randomness = 0.5
@@ -104,14 +101,16 @@ pattern_0 = SubResource("TileMapPattern_osmho")
 
 [node name="level6" type="Node2D"]
 
-[node name="background" type="TextureRect" parent="."]
-modulate = Color(0.196078, 0.196078, 0.196078, 1)
-offset_left = 35.0
-offset_top = -14.0
-offset_right = 1120.0
-offset_bottom = 640.0
-texture = SubResource("CanvasTexture_0gv4q")
-stretch_mode = 1
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.588235, 0.588235, 0.588235, 1)
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(848, 320)
+texture = ExtResource("3_socqi")
 
 [node name="droplets" type="GPUParticles2D" parent="."]
 position = Vector2(589, 75)

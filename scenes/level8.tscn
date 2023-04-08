@@ -9,10 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bn1a6ac4uq52m" path="res://scenes/rock02.tscn" id="5_2oc2h"]
 [ext_resource type="Shader" path="res://tiles.gdshader" id="6_nuoyu"]
 [ext_resource type="PackedScene" uid="uid://dvfb7b8w23exe" path="res://scenes/pause.tscn" id="9_gsvb6"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_dlwhr"]
-diffuse_texture = ExtResource("3_uhmkh")
-normal_texture = ExtResource("3_0ik55")
+[ext_resource type="Texture2D" uid="uid://ce80fawm5rrn5" path="res://assets/levels6_10/bgnd.png" id="10_fqxcr"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8r6h3"]
 lifetime_randomness = 0.5
@@ -110,14 +107,17 @@ pattern_0 = SubResource("TileMapPattern_osmho")
 
 [node name="level8" type="Node2D"]
 
-[node name="background" type="TextureRect" parent="."]
-modulate = Color(0.196078, 0.196078, 0.196078, 1)
-offset_left = 35.0
-offset_top = -290.0
-offset_right = 1510.0
-offset_bottom = 734.0
-texture = SubResource("CanvasTexture_dlwhr")
-stretch_mode = 1
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.588235, 0.588235, 0.588235, 1)
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(872, 228)
+scale = Vector2(1, 1.5375)
+texture = ExtResource("10_fqxcr")
 
 [node name="droplets" type="GPUParticles2D" parent="."]
 position = Vector2(648, -216)

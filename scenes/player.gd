@@ -64,7 +64,6 @@ func _physics_process(delta):
 	
 	#Power up 2: Change size
 	if power_up_2: #scaling between 0.1 and 1.0
-		print(get_slide_collision_count())
 		if Input.is_action_just_pressed("scale_down"):
 			if (scale.x >= 0.2 and scale.y >= 0.2):
 				scale.x -= 0.1

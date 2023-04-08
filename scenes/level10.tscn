@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://c16oldv7shiud"]
+[gd_scene load_steps=27 format=3 uid="uid://c16oldv7shiud"]
 
 [ext_resource type="Texture2D" uid="uid://70dwx0ddwtkx" path="res://assets/levels6_10/block.png" id="1_vowd1"]
 [ext_resource type="Texture2D" uid="uid://c0hj8f3iijot6" path="res://assets/levels1_5/block_n.png" id="2_wd473"]
+[ext_resource type="Texture2D" uid="uid://ce80fawm5rrn5" path="res://assets/levels6_10/bgnd.png" id="3_tp18n"]
 [ext_resource type="Shader" path="res://tiles.gdshader" id="4_tt286"]
 [ext_resource type="PackedScene" uid="uid://crh6mn1fg1utf" path="res://scenes/player.tscn" id="5_b8x1e"]
 [ext_resource type="Texture2D" uid="uid://cqrn5ls8lhdov" path="res://assets/spikes.png" id="5_iqhfn"]
@@ -178,23 +179,19 @@ offset_bottom = -1965.0
 texture = SubResource("CanvasTexture_dncfy")
 stretch_mode = 1
 
-[node name="background6" type="TextureRect" parent="."]
-modulate = Color(0.196078, 0.196078, 0.196078, 1)
-offset_left = -819.0
-offset_top = -3267.0
-offset_right = 266.0
-offset_bottom = -2609.0
-texture = SubResource("CanvasTexture_dncfy")
-stretch_mode = 1
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_offset = Vector2(0, -3500)
 
-[node name="background7" type="TextureRect" parent="."]
-modulate = Color(0.196078, 0.196078, 0.196078, 1)
-offset_left = 253.0
-offset_top = -3335.0
-offset_right = 1338.0
-offset_bottom = -2677.0
-texture = SubResource("CanvasTexture_dncfy")
-stretch_mode = 1
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.588235, 0.588235, 0.588235, 1)
+position = Vector2(-640, -3240)
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(872, 228)
+scale = Vector2(1, 1.5375)
+texture = ExtResource("3_tp18n")
 
 [node name="droplets" type="GPUParticles2D" parent="."]
 position = Vector2(208, -3264)
