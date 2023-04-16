@@ -66,7 +66,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_af4n3"]
-radius = 22.8254
+radius = 25.02
 
 [sub_resource type="Gradient" id="Gradient_fwnwr"]
 offsets = PackedFloat32Array(0, 0.496296, 1)
@@ -96,6 +96,7 @@ script = ExtResource("1_4qw1h")
 material = SubResource("ShaderMaterial_t87iu")
 sprite_frames = SubResource("SpriteFrames_5sr33")
 animation = &"portal01"
+frame_progress = 0.356005
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)

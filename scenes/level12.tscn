@@ -102,22 +102,22 @@ pattern_0 = SubResource("TileMapPattern_lqiph")
 [sub_resource type="TileMapPattern" id="TileMapPattern_myjqp"]
 tile_data = PackedInt32Array(0, 1, 0, 1, 1, 65536, 2, 1, 131072, 3, 1, 196608)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m211l"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iacnn"]
 load_path = "res://.godot/imported/spikes.png-8623a6308d30caf0ad1d5cef975bbe78.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xjdh2"]
-texture = SubResource("CompressedTexture2D_m211l")
+texture = SubResource("CompressedTexture2D_iacnn")
 texture_region_size = Vector2i(128, 128)
 use_texture_padding = false
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rrwwx"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xgv6v"]
 load_path = "res://.godot/imported/block.png-1cb47ce25a41c0b84dc3bc33e6dc5f54.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bpb3g"]
-texture = SubResource("CompressedTexture2D_rrwwx")
+texture = SubResource("CompressedTexture2D_xgv6v")
 texture_region_size = Vector2i(32, 32)
 use_texture_padding = false
 0:0/next_alternative_id = 4

@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 350.0
 const JUMP_VELOCITY = -400.0
+var fps
 var power_up_1 = false
 var power_up_2 = false
 
@@ -19,17 +20,14 @@ func _process(delta):
 	if get_tree().paused == false:
 		$Camera2D.make_current() #recenter camera after pause
 	$GPUParticles2D.emitting = false
+	$GPUParticles2D.explosiveness = 0
 	$AnimatedSprite2D.play("default")
 	if velocity.x > 0 and is_on_floor():
 		$GPUParticles2D.emitting = true
-		$GPUParticles2D.get_process_material().set_gravity(Vector3(10, 0, 0))
-		$GPUParticles2D.position = Vector2(-50, 62)
 		$AnimatedSprite2D.play("move")
 		$AnimatedSprite2D.flip_h = false
 	elif velocity.x < 0 and is_on_floor():
 		$GPUParticles2D.emitting = true
-		$GPUParticles2D.get_process_material().set_gravity(Vector3(-10, 0, 0))
-		$GPUParticles2D.position = Vector2(50, 62)
 		$AnimatedSprite2D.play("move")
 		$AnimatedSprite2D.flip_h = true
 	
@@ -38,6 +36,13 @@ func _process(delta):
 		set_power_up_1(true)
 	if int(i) > 11:
 		set_power_up_2(true)
+	
+	#fix jittery movement
+	Engine.max_fps = DisplayServer.screen_get_refresh_rate() #max fps = monitor refresh rate
+	fps = Engine.get_frames_per_second()
+	Engine.physics_ticks_per_second = fps #fps = tps
+	
+	
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -79,7 +84,6 @@ func _physics_process(delta):
 				scale.y += 0.1
 	
 	move_and_slide()
-
 
 func _on_spikes_body_entered(body):
 	if body is CharacterBody2D:
