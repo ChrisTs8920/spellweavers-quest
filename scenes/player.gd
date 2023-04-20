@@ -68,9 +68,9 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 	
 	#Power up 2: Change size
-	$RayUp.target_position = Vector2.UP * 100 #raycasts prevents player from glitching inside wall
-	$RayLeft.target_position = Vector2.RIGHT * 100
-	$RayRight.target_position = Vector2.LEFT * 100
+	$RayUp.target_position = Vector2.UP * 80 #raycasts prevents player from glitching inside wall
+	$RayLeft.target_position = Vector2.RIGHT * 80
+	$RayRight.target_position = Vector2.LEFT * 80
 	
 	if power_up_2: #scaling between 0.1 and 1.0
 		if Input.is_action_just_pressed("scale_down"):

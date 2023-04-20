@@ -79,15 +79,15 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_4yynh")
 
 [node name="RayUp" type="RayCast2D" parent="."]
-target_position = Vector2(0, 100)
+target_position = Vector2(0, 80)
 collide_with_areas = true
 
 [node name="RayLeft" type="RayCast2D" parent="."]
-target_position = Vector2(0, 100)
+target_position = Vector2(0, 80)
 collide_with_areas = true
 
 [node name="RayRight" type="RayCast2D" parent="."]
-target_position = Vector2(0, 100)
+target_position = Vector2(0, 80)
 collide_with_areas = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
