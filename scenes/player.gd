@@ -68,17 +68,17 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 	
 	#Power up 2: Change size
+	$RayUp.target_position = Vector2.UP * 100 #raycasts prevents player from glitching inside wall
+	$RayLeft.target_position = Vector2.RIGHT * 100
+	$RayRight.target_position = Vector2.LEFT * 100
+	
 	if power_up_2: #scaling between 0.1 and 1.0
 		if Input.is_action_just_pressed("scale_down"):
 			if (scale.x >= 0.2 and scale.y >= 0.2):
 				scale.x -= 0.1
 				scale.y -= 0.1
-		if get_slide_collision_count() >= 4 and direction == 0: #if inside wall, scale down automatically
-			scale.x -= 0.1
-			scale.y -= 0.1
-		if Input.is_action_just_pressed("scale_up") and get_slide_collision_count() < 4:
-			#prevents player from scaling up if player does not fit
-			#get_slide_collision_count() returns 4 when player is 'glitched' and is inside wall
+		if (Input.is_action_just_pressed("scale_up") and !$RayUp.is_colliding() and
+		!$RayLeft.is_colliding() and !$RayRight.is_colliding()):
 			if (scale.x <= 1 and scale.y <= 1):
 				scale.x += 0.1
 				scale.y += 0.1
