@@ -1,23 +1,17 @@
-[gd_scene load_steps=22 format=3 uid="uid://dqqfv87qkwcgc"]
+[gd_scene load_steps=19 format=3 uid="uid://dqqfv87qkwcgc"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_2l0mo"]
 [ext_resource type="Texture2D" uid="uid://tkrjb7vlj02j" path="res://assets/levels11_15/bgnd1.png" id="2_1kouo"]
-[ext_resource type="Texture2D" uid="uid://myj8xib00crj" path="res://assets/levels11_15/bgnd.png" id="2_hgksr"]
 [ext_resource type="Texture2D" uid="uid://ceg1oiq67lqjd" path="res://assets/levels11_15/bgnd2.png" id="3_hjvab"]
 [ext_resource type="Texture2D" uid="uid://dibj53i6bb0ge" path="res://assets/2d_light.webp" id="4_olvk5"]
 [ext_resource type="Texture2D" uid="uid://cn7u7qc1n7t6t" path="res://assets/levels11_15/bgnd3.png" id="4_s1nm3"]
 [ext_resource type="Script" path="res://scenes/Name_label.gd" id="4_ugjip"]
 [ext_resource type="Script" path="res://scenes/About_label.gd" id="5_4ojpu"]
 [ext_resource type="Script" path="res://scenes/Start_btn.gd" id="5_ckdxp"]
-[ext_resource type="Texture2D" uid="uid://bwc2ay2jfjekg" path="res://assets/levels1_5/bgnd_n.png" id="5_matvv"]
 [ext_resource type="Texture2D" uid="uid://ctsmcuom8ig7m" path="res://assets/button/button.png" id="5_n6usu"]
 [ext_resource type="Texture2D" uid="uid://d1jrvsffjrnun" path="res://assets/levels11_15/bgnd4.png" id="5_wet8o"]
 [ext_resource type="Texture2D" uid="uid://3jxs3xpa4s6r" path="res://assets/button/button_pressed.png" id="6_l8ftt"]
 [ext_resource type="Texture2D" uid="uid://p0up8rfvj000" path="res://assets/button/button_n.png" id="6_yq2av"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_6ioea"]
-diffuse_texture = ExtResource("2_hgksr")
-normal_texture = ExtResource("5_matvv")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_85asg"]
 emission_shape = 3
@@ -97,16 +91,6 @@ motion_mirroring = Vector2(2500, 600)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2(609, 313)
 texture = ExtResource("5_wet8o")
-
-[node name="background" type="TextureRect" parent="."]
-visible = false
-modulate = Color(0.588235, 0.588235, 0.588235, 1)
-offset_right = 1152.0
-offset_bottom = 640.0
-texture = SubResource("CanvasTexture_6ioea")
-stretch_mode = 1
-flip_h = true
-flip_v = true
 
 [node name="ashes" type="GPUParticles2D" parent="."]
 position = Vector2(408, -24)
