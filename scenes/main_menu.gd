@@ -36,4 +36,5 @@ func _on_exit_pressed():
 func _on_start_pressed():
 	Ambient.play()
 	WaterDrip.play()
+	Hud.show()
 	start_game.emit()

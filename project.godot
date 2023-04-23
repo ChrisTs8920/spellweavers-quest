@@ -21,6 +21,7 @@ Ambient="*res://scenes/ambient.tscn"
 WaterDrip="*res://scenes/water_drip.tscn"
 ANIMA="*res://addons/anima/core/constants.gd"
 Anima="*res://addons/anima/core/anima.gd"
+Hud="*res://scenes/hud.tscn"
 
 [display]
 

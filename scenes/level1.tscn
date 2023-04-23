@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://0un0jjd1kwq5"]
+[gd_scene load_steps=25 format=3 uid="uid://0un0jjd1kwq5"]
 
 [ext_resource type="Texture2D" uid="uid://24edg7w7m7lt" path="res://assets/levels1_5/bgnd1.png" id="1_btf3k"]
 [ext_resource type="PackedScene" uid="uid://dvfb7b8w23exe" path="res://scenes/pause.tscn" id="1_dmjp1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cw1jhmm65hkap" path="res://assets/levels1_5/bgnd4.png" id="4_5nx8v"]
 [ext_resource type="Shader" path="res://tiles.gdshader" id="6_27w0b"]
 [ext_resource type="PackedScene" uid="uid://cynb148ynrrbx" path="res://scenes/rock01.tscn" id="6_ckgor"]
+[ext_resource type="PackedScene" uid="uid://pj8e61qxn8ib" path="res://scenes/coin.tscn" id="7_bklym"]
 [ext_resource type="PackedScene" uid="uid://ce2aab6tk16ip" path="res://scenes/stalac.tscn" id="7_hkr6q"]
 
 [sub_resource type="GDScript" id="GDScript_y5r46"]
@@ -166,6 +167,9 @@ visibility_rect = Rect2(-100, -100, 600, 600)
 
 [node name="portal" parent="." instance=ExtResource("1_myx5p")]
 position = Vector2(1023, 509)
+
+[node name="coin" parent="." instance=ExtResource("7_bklym")]
+position = Vector2(736, 481)
 
 [node name="stalac" parent="." instance=ExtResource("7_hkr6q")]
 position = Vector2(544, 224)
