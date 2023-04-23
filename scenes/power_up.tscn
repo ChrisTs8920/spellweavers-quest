@@ -25,7 +25,7 @@ size = Vector2(56, 93)
 [sub_resource type="Theme" id="Theme_6w6qp"]
 
 [node name="power_up" type="Area2D"]
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_o0358")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
