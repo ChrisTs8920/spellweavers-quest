@@ -11,6 +11,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
+	Hud.powerup_count += 1
 	emit_signal("body_entered")
 	$pickup.play()
 	$PopupPanel.popup()

@@ -26,4 +26,5 @@ func _process(delta):
 func _on_body_entered(body):
 	$sound.play()
 	await $sound.finished
+	Hud.collected = false
 	get_tree().change_scene_to_file("res://scenes/level" + str(int(i) + 1) + ".tscn")

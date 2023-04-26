@@ -90,4 +90,7 @@ func _on_spikes_body_entered(body):
 		$hit.play()
 		var name = get_tree().get_current_scene().get_name()
 		await $hit.finished
+		if Hud.collected:
+			Hud.coin_count -= 1
+		Hud.collected = false
 		get_tree().change_scene_to_file("res://scenes/" + name + ".tscn")
