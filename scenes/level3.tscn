@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dfplxdwtumdkt"]
+[gd_scene load_steps=21 format=3 uid="uid://dfplxdwtumdkt"]
 
 [ext_resource type="Texture2D" uid="uid://24edg7w7m7lt" path="res://assets/levels1_5/bgnd1.png" id="1_pgcts"]
 [ext_resource type="Texture2D" uid="uid://cnpuenbnkr0s7" path="res://assets/levels1_5/block.png" id="1_uusrs"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cw1jhmm65hkap" path="res://assets/levels1_5/bgnd4.png" id="4_j30uo"]
 [ext_resource type="PackedScene" uid="uid://civnvs6ycoxy8" path="res://scenes/portal.tscn" id="5_e4rrq"]
 [ext_resource type="PackedScene" uid="uid://dvfb7b8w23exe" path="res://scenes/pause.tscn" id="6_5x22y"]
+[ext_resource type="PackedScene" uid="uid://pj8e61qxn8ib" path="res://scenes/coin.tscn" id="11_sv6d5"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6d6mu"]
 lifetime_randomness = 0.5
@@ -153,3 +154,6 @@ position = Vector2(106, 534)
 color = Color(0.392157, 0.392157, 0.392157, 1)
 
 [node name="pause" parent="." instance=ExtResource("6_5x22y")]
+
+[node name="coin" parent="." instance=ExtResource("11_sv6d5")]
+position = Vector2(991, 548)

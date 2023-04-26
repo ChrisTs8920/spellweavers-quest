@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dtmt1u36lh2ou"]
+[gd_scene load_steps=24 format=3 uid="uid://dtmt1u36lh2ou"]
 
 [ext_resource type="PackedScene" uid="uid://civnvs6ycoxy8" path="res://scenes/portal.tscn" id="1_0eqmb"]
 [ext_resource type="Texture2D" uid="uid://24edg7w7m7lt" path="res://assets/levels1_5/bgnd1.png" id="1_2we8i"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bkug5hs7a2h7o" path="res://scenes/moving_block.tscn" id="5_velik"]
 [ext_resource type="Script" path="res://scenes/moving_block.gd" id="6_neh5q"]
 [ext_resource type="PackedScene" uid="uid://dvfb7b8w23exe" path="res://scenes/pause.tscn" id="9_2ig1q"]
+[ext_resource type="PackedScene" uid="uid://pj8e61qxn8ib" path="res://scenes/coin.tscn" id="14_rfjvr"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ea3pu"]
 lifetime_randomness = 0.5
@@ -144,6 +145,9 @@ visibility_rect = Rect2(-100, -100, 600, 600)
 
 [node name="portal" parent="." instance=ExtResource("1_0eqmb")]
 position = Vector2(1025, 374)
+
+[node name="coin" parent="." instance=ExtResource("14_rfjvr")]
+position = Vector2(608, 544)
 
 [node name="ground" type="TileMap" parent="."]
 material = SubResource("ShaderMaterial_ie2as")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bih1vy6v32dk8"]
+[gd_scene load_steps=22 format=3 uid="uid://bih1vy6v32dk8"]
 
 [ext_resource type="PackedScene" uid="uid://crh6mn1fg1utf" path="res://scenes/player.tscn" id="1_fjy6o"]
 [ext_resource type="Texture2D" uid="uid://cnpuenbnkr0s7" path="res://assets/levels1_5/block.png" id="2_2sfph"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bn1a6ac4uq52m" path="res://scenes/rock02.tscn" id="4_tngbd"]
 [ext_resource type="Shader" path="res://tiles.gdshader" id="5_evbvd"]
 [ext_resource type="Texture2D" uid="uid://cw1jhmm65hkap" path="res://assets/levels1_5/bgnd4.png" id="5_tag45"]
+[ext_resource type="PackedScene" uid="uid://pj8e61qxn8ib" path="res://scenes/coin.tscn" id="7_38vnd"]
 [ext_resource type="PackedScene" uid="uid://dvfb7b8w23exe" path="res://scenes/pause.tscn" id="7_q3f4k"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6j0wq"]
@@ -142,6 +143,9 @@ visibility_rect = Rect2(-100, -100, 600, 600)
 
 [node name="portal" parent="." instance=ExtResource("3_mq8ot")]
 position = Vector2(1078, 255)
+
+[node name="coin" parent="." instance=ExtResource("7_38vnd")]
+position = Vector2(482, 546)
 
 [node name="ground" type="TileMap" parent="."]
 material = SubResource("ShaderMaterial_71jte")

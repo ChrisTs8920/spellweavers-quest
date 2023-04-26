@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c16oldv7shiud"]
+[gd_scene load_steps=31 format=3 uid="uid://c16oldv7shiud"]
 
 [ext_resource type="Texture2D" uid="uid://70dwx0ddwtkx" path="res://assets/levels6_10/block.png" id="1_vowd1"]
 [ext_resource type="Texture2D" uid="uid://c0hj8f3iijot6" path="res://assets/levels1_5/block_n.png" id="2_wd473"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c4vuek8xdvq6o" path="res://assets/levels6_10/bgnd4.png" id="6_4c3pf"]
 [ext_resource type="PackedScene" uid="uid://civnvs6ycoxy8" path="res://scenes/portal.tscn" id="6_anca5"]
 [ext_resource type="PackedScene" uid="uid://dvfb7b8w23exe" path="res://scenes/pause.tscn" id="7_00j50"]
+[ext_resource type="PackedScene" uid="uid://pj8e61qxn8ib" path="res://scenes/coin.tscn" id="12_lpdgf"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dncfy"]
 diffuse_texture = ExtResource("1_vowd1")
@@ -223,7 +224,7 @@ texture = ExtResource("6_4c3pf")
 
 [node name="droplets" type="GPUParticles2D" parent="."]
 position = Vector2(208, -3264)
-amount = 32
+amount = 16
 process_material = SubResource("ParticleProcessMaterial_jbnuk")
 lifetime = 6.0
 preprocess = 2.0
@@ -232,6 +233,9 @@ visibility_rect = Rect2(-100, -100, 600, 5000)
 
 [node name="portal" parent="." instance=ExtResource("6_anca5")]
 position = Vector2(231, -3099)
+
+[node name="coin" parent="." instance=ExtResource("12_lpdgf")]
+position = Vector2(-480, -2976)
 
 [node name="ground" type="TileMap" parent="."]
 material = SubResource("ShaderMaterial_iita3")

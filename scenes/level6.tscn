@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dopbyjtxlkhga"]
+[gd_scene load_steps=24 format=3 uid="uid://dopbyjtxlkhga"]
 
 [ext_resource type="PackedScene" uid="uid://civnvs6ycoxy8" path="res://scenes/portal.tscn" id="1_gaand"]
 [ext_resource type="Texture2D" uid="uid://ek1ptrjo5w0r" path="res://assets/levels6_10/bgnd1.png" id="1_xlxmt"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c4vuek8xdvq6o" path="res://assets/levels6_10/bgnd4.png" id="4_rqalp"]
 [ext_resource type="PackedScene" uid="uid://c07o1byq4i6m2" path="res://scenes/power_up.tscn" id="7_4sk8e"]
 [ext_resource type="PackedScene" uid="uid://dvfb7b8w23exe" path="res://scenes/pause.tscn" id="8_6845l"]
+[ext_resource type="PackedScene" uid="uid://pj8e61qxn8ib" path="res://scenes/coin.tscn" id="13_rvrcx"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3vyef"]
 lifetime_randomness = 0.5
@@ -155,6 +156,9 @@ visibility_rect = Rect2(-100, -100, 600, 600)
 [node name="portal" parent="." instance=ExtResource("1_gaand")]
 modulate = Color(1, 0.968627, 0.419608, 1)
 position = Vector2(1013, 503)
+
+[node name="coin" parent="." instance=ExtResource("13_rvrcx")]
+position = Vector2(96, 288)
 
 [node name="ground" type="TileMap" parent="."]
 material = SubResource("ShaderMaterial_0xls6")
