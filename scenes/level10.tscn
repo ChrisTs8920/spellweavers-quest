@@ -235,7 +235,7 @@ visibility_rect = Rect2(-100, -100, 600, 5000)
 position = Vector2(231, -3099)
 
 [node name="coin" parent="." instance=ExtResource("12_lpdgf")]
-position = Vector2(-480, -2976)
+position = Vector2(-544, -2976)
 
 [node name="ground" type="TileMap" parent="."]
 material = SubResource("ShaderMaterial_iita3")
