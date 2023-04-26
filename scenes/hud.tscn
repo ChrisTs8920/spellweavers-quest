@@ -20,6 +20,7 @@ outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_48fp1")
 
 [node name="coin" type="Sprite2D" parent="."]
