@@ -1,6 +1,6 @@
 # Jelly Man! WIP
 Jelly Man! is simple platformer game made using Godot 4.\
-Sounds provided by freesound.org\
+Sounds provided by [freesound.org](freesound.org)\
 Background Texture provided by: [lil-Cthuhlu](https://lil-cthulhu.itch.io/pixel-art-cave-background)
 
 ## How to run
