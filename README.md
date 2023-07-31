@@ -23,8 +23,8 @@ Background textures provided by: [lil-Cthuhlu](https://lil-cthulhu.itch.io/pixel
 
 ## Screenshots
 
-![screenshot1](Screenshot_1.jpg)
+![screenshot1](https://github.com/ChrisTs8920/platformer-godot/blob/main/screenshots/Screenshot_1.jpg?raw=true)
 
-![screenshot2](Screenshot_2.jpg)
+![screenshot2](https://github.com/ChrisTs8920/platformer-godot/blob/main/screenshots/Screenshot_2.jpg?raw=true)
 
-![screenshot3](Screenshot_3.jpg)
+![screenshot3](https://github.com/ChrisTs8920/platformer-godot/blob/main/screenshots/Screenshot_3.jpg?raw=true)
