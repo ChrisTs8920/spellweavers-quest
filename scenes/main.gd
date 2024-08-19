@@ -6,8 +6,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if $Help.visible:
+		if Input.is_action_pressed("pause"):
+			$MainMenu.show()
+			$Help.hide()
 
 func new_game():
 	get_tree().change_scene_to_file("res://scenes/level1.tscn")
+
+func help():
+	$MainMenu.hide()
+	$Help.show()
 	

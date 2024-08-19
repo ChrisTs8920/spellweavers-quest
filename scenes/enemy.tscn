@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://durylf77waa3p"]
+
+[ext_resource type="Texture2D" uid="uid://bk2keoyg1olqm" path="res://assets/enemy_slime/slime_base.png" id="1_odjck"]
+[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_tm20y"]
+[ext_resource type="Texture2D" uid="uid://b3t8lv8irfmlm" path="res://assets/enemy_slime/slime_left_right.png" id="2_nvucf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7vl1y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_odjck")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nvucf")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xim4d"]
+radius = 32.0
+height = 128.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_22vx8"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(60, 1, 1)
+angle_max = 30.0
+initial_velocity_min = 150.0
+initial_velocity_max = 150.0
+gravity = Vector3(0, 0, 0)
+damping_min = 100.0
+damping_max = 100.0
+scale_min = 3.0
+scale_max = 4.0
+color = Color(0.415686, 0.745098, 0.188235, 1)
+collision_mode = 1
+collision_friction = 0.5
+collision_bounce = 0.5
+
+[node name="enemy" type="CharacterBody2D"]
+modulate = Color(1, 1, 1, 0.666667)
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_tm20y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7vl1y")
+animation = &"move"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xim4d")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 32)
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_22vx8")
+fixed_fps = 60
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

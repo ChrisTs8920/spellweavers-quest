@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=3 uid="uid://p5xyinyixkgu"]
+
+[ext_resource type="Texture2D" uid="uid://trkmey2ufe7n" path="res://assets/Assets 1024 Cave/bgnd1.png" id="1_7ae2b"]
+[ext_resource type="Texture2D" uid="uid://bem0hqcmh2m7o" path="res://assets/Assets 1024 Cave/Cave - BigRocks1.png" id="2_nqpn0"]
+[ext_resource type="Texture2D" uid="uid://3claq8q14pfa" path="res://assets/Assets 1024 Cave/Cave - RockCombinations1.png" id="3_pouta"]
+[ext_resource type="Texture2D" uid="uid://d32jlonw0uytd" path="res://assets/Assets 1024 Cave/Cave - SmallRocks.png" id="4_uxshv"]
+[ext_resource type="Texture2D" uid="uid://d3bv2tp00f57b" path="res://assets/Assets 1024 Cave/Cave - Floor.png" id="5_uixcp"]
+
+[node name="horizontalParallax" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+modulate = Color(0.952941, 0.952941, 0.952941, 1)
+position = Vector2(4, -216)
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(744, 421)
+scale = Vector2(1.61151, 1.48612)
+texture = ExtResource("1_7ae2b")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(769, 613)
+texture = ExtResource("2_nqpn0")
+region_enabled = true
+region_rect = Rect2(20, 13, 735, 591)
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1660, 749)
+texture = ExtResource("3_pouta")
+region_enabled = true
+region_rect = Rect2(14, 76, 592, 355)
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(40, 282)
+texture = ExtResource("4_uxshv")
+region_enabled = true
+region_rect = Rect2(1612, 54, 192, 376)
+
+[node name="Sprite2D6" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1147, 309)
+rotation = 3.14159
+texture = ExtResource("4_uxshv")
+region_enabled = true
+region_rect = Rect2(28, 1570, 372, 460)
+
+[node name="Sprite2D7" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(75, 770)
+texture = ExtResource("5_uixcp")
+region_enabled = true
+region_rect = Rect2(818, 1627, 810, 355)
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(407, 359)
+rotation = 3.14159
+texture = ExtResource("2_nqpn0")
+region_enabled = true
+region_rect = Rect2(1393, 60, 356, 521)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(4, -216)
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(380, 677)
+texture = ExtResource("4_uxshv")
+region_enabled = true
+region_rect = Rect2(1147, 43, 199, 226)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(938, 766)
+texture = ExtResource("5_uixcp")
+region_enabled = true
+region_rect = Rect2(49, 988, 1485, 357)
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(192, 727)
+texture = ExtResource("4_uxshv")
+region_enabled = true
+region_rect = Rect2(821, 1649, 371, 386)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+position = Vector2(4, -216)
+motion_scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(1304, 587)
+texture = ExtResource("3_pouta")
+region_enabled = true
+region_rect = Rect2(51, 1219, 602, 639)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(544, 246)
+texture = ExtResource("3_pouta")
+region_enabled = true
+region_rect = Rect2(965, 55, 506, 389)
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+position = Vector2(4, -216)
+motion_scale = Vector2(0.9, 0.9)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
+position = Vector2(120, 731)
+texture = ExtResource("3_pouta")
+region_enabled = true
+region_rect = Rect2(1559, 1289, 424, 659)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer4"]
+position = Vector2(883, 527)
+texture = ExtResource("2_nqpn0")
+region_enabled = true
+region_rect = Rect2(1759, 229, 273, 794)

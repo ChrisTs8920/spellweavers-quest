@@ -4,7 +4,6 @@ extends Area2D
 func _ready():
 	$AnimatedSprite2D.play("default")
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -12,10 +11,13 @@ func _process(delta):
 
 func _on_body_entered(body):
 	Hud.powerup_count += 1
-	emit_signal("body_entered")
 	$pickup.play()
-	$PopupPanel.popup()
-	$PopupPanel.visible = true
 	$AnimatedSprite2D.hide()
 	$CollisionShape2D.set_deferred("disabled", true)
+	if (Hud.powerup_count == 1):
+		Singleton.set_power_up_1(true)
+		Singleton.timer1.start(5)
+	if (Hud.powerup_count == 2):
+		Singleton.set_power_up_2(true)
+		Singleton.timer2.start(5)
 	#queue_free()

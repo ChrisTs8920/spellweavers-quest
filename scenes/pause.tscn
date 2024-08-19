@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvfb7b8w23exe"]
+[gd_scene load_steps=4 format=3 uid="uid://dvfb7b8w23exe"]
 
 [ext_resource type="Script" path="res://scenes/pause.gd" id="1_n43ev"]
+[ext_resource type="FontFile" uid="uid://bf5p8ra1wyxnj" path="res://assets/font/KingdomCrown-lxdzD.otf" id="2_anim2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kkamm"]
 font_size = 32
@@ -8,6 +9,7 @@ font_size = 32
 [node name="pause" type="Control"]
 process_mode = 3
 visible = false
+z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,17 +19,22 @@ grow_vertical = 2
 script = ExtResource("1_n43ev")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 640.0
 color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="Label" parent="."]
+layout_mode = 0
 offset_left = 464.0
 offset_top = 296.0
 offset_right = 697.0
 offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_anim2")
 text = "GAME PAUSED."
 label_settings = SubResource("LabelSettings_kkamm")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(578, 320)

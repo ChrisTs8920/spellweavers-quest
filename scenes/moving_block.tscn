@@ -1,20 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkug5hs7a2h7o"]
+[gd_scene load_steps=3 format=3 uid="uid://bkug5hs7a2h7o"]
 
-[ext_resource type="Texture2D" uid="uid://cnpuenbnkr0s7" path="res://assets/levels1_5/block.png" id="1_8c6tw"]
-[ext_resource type="Texture2D" uid="uid://c0hj8f3iijot6" path="res://assets/levels1_5/block_n.png" id="2_m226h"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_lrj3w"]
-diffuse_texture = ExtResource("1_8c6tw")
-normal_texture = ExtResource("2_m226h")
+[ext_resource type="Texture2D" uid="uid://hb2hloyrj0hs" path="res://assets/Mossy Assets/Mossy Tileset/Mossy - MossyHills.png" id="1_keic6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwg0f"]
-size = Vector2(128, 128)
+size = Vector2(192, 176)
 
 [node name="moving_block" type="AnimatableBody2D"]
 scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("CanvasTexture_lrj3w")
+texture = ExtResource("1_keic6")
+region_enabled = true
+region_rect = Rect2(127.185, 1128.59, 295.687, 308.656)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_iwg0f")

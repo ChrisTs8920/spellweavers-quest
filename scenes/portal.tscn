@@ -1,108 +1,116 @@
-[gd_scene load_steps=22 format=3 uid="uid://civnvs6ycoxy8"]
+[gd_scene load_steps=19 format=3 uid="uid://civnvs6ycoxy8"]
 
 [ext_resource type="Script" path="res://scenes/portal.gd" id="1_4qw1h"]
-[ext_resource type="Shader" path="res://tiles.gdshader" id="2_xslqx"]
-[ext_resource type="Texture2D" uid="uid://bx3cy6wxguj62" path="res://assets/portal/portal01_n.png" id="3_wrhva"]
-[ext_resource type="Texture2D" uid="uid://du44607nqff3u" path="res://assets/portal/portal01.png" id="4_oglio"]
-[ext_resource type="Texture2D" uid="uid://ca6d2fbb73t0h" path="res://assets/portal/portal02.png" id="5_e4tle"]
-[ext_resource type="Texture2D" uid="uid://dhiwbq2ea8me8" path="res://assets/portal/portal03.png" id="6_vxjuc"]
-[ext_resource type="Texture2D" uid="uid://d0jknp1374472" path="res://assets/portal/portal01y.png" id="7_fgnt7"]
-[ext_resource type="Texture2D" uid="uid://dkty4s47w4a7e" path="res://assets/portal/portal02y.png" id="8_rma5h"]
-[ext_resource type="Texture2D" uid="uid://djp7r412taa85" path="res://assets/portal/portal03y.png" id="9_rem0e"]
-[ext_resource type="Texture2D" uid="uid://dq1d7xmiqhwsp" path="res://assets/portal/portal01r.png" id="10_khj5p"]
-[ext_resource type="Texture2D" uid="uid://culxek5do8pah" path="res://assets/portal/portal02r.png" id="11_4m7d7"]
-[ext_resource type="Texture2D" uid="uid://cyc5mh207t1vq" path="res://assets/portal/portal03r.png" id="12_sf82x"]
+[ext_resource type="Texture2D" uid="uid://c0c7i44h0uuu4" path="res://assets/portal/Purple Portal Sprite Sheet.png" id="2_soorn"]
 [ext_resource type="Texture2D" uid="uid://cx0i38qq0h2yr" path="res://assets/portal/circle_05.png" id="13_1sjbm"]
 [ext_resource type="AudioStream" uid="uid://reivae6hd1ev" path="res://assets/sounds/portal_enter.wav" id="14_k8o85"]
 [ext_resource type="Texture2D" uid="uid://br5n47x25amkm" path="res://assets/portal/light_01.png" id="14_kccx4"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_t87iu"]
-shader = ExtResource("2_xslqx")
-shader_parameter/normal_map = ExtResource("3_wrhva")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8th2e"]
+atlas = ExtResource("2_soorn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1yan"]
+atlas = ExtResource("2_soorn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0d18"]
+atlas = ExtResource("2_soorn")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwfsj"]
+atlas = ExtResource("2_soorn")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yeoo"]
+atlas = ExtResource("2_soorn")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qcf7"]
+atlas = ExtResource("2_soorn")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq1o2"]
+atlas = ExtResource("2_soorn")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpil3"]
+atlas = ExtResource("2_soorn")
+region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5sr33"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_oglio")
+"texture": SubResource("AtlasTexture_8th2e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_e4tle")
+"texture": SubResource("AtlasTexture_o1yan")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_vxjuc")
+"texture": SubResource("AtlasTexture_a0d18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwfsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yeoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qcf7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pq1o2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpil3")
 }],
 "loop": true,
-"name": &"portal01",
-"speed": 7.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_fgnt7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_rma5h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_rem0e")
-}],
-"loop": true,
-"name": &"portal02",
-"speed": 7.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_khj5p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_4m7d7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_sf82x")
-}],
-"loop": true,
-"name": &"portal03",
-"speed": 7.0
+"name": &"default",
+"speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_af4n3"]
-radius = 25.02
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tpkh3"]
+radius = 7.0
+height = 38.0
 
 [sub_resource type="Gradient" id="Gradient_fwnwr"]
 offsets = PackedFloat32Array(0, 0.496296, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_f24kh"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nibqy"]
 gradient = SubResource("Gradient_fwnwr")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vr8a0"]
-emission_shape = 2
-emission_sphere_radius = 45.46
 particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 35.0
 direction = Vector3(0, 0, 0)
-gravity = Vector3(0, -98, 0)
 initial_velocity_max = 50.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-scale_min = 0.05
-scale_max = 0.05
-color = Color(0.678431, 0.678431, 0.929412, 1)
-color_ramp = SubResource("GradientTexture1D_f24kh")
+gravity = Vector3(0, -98.8, 0)
+scale_min = 0.02
+scale_max = 0.02
+color = Color(0.933333, 0.647059, 1, 1)
+color_ramp = SubResource("GradientTexture1D_nibqy")
 
 [node name="portal" type="Area2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_4qw1h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_t87iu")
+texture_filter = 1
+position = Vector2(-1, 5)
 sprite_frames = SubResource("SpriteFrames_5sr33")
-animation = &"portal01"
-frame_progress = 0.356005
+frame_progress = 0.0428142
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
-shape = SubResource("CircleShape2D_af4n3")
+position = Vector2(-0.5, 8)
+shape = SubResource("CapsuleShape2D_tpkh3")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-1, 7)
+amount = 24
 process_material = SubResource("ParticleProcessMaterial_vr8a0")
 texture = ExtResource("13_1sjbm")
 fixed_fps = 60

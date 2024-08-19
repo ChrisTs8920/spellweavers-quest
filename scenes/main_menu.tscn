@@ -1,27 +1,23 @@
-[gd_scene load_steps=19 format=3 uid="uid://dqqfv87qkwcgc"]
+[gd_scene load_steps=17 format=3 uid="uid://dqqfv87qkwcgc"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_2l0mo"]
-[ext_resource type="Texture2D" uid="uid://tkrjb7vlj02j" path="res://assets/levels11_15/bgnd1.png" id="2_1kouo"]
-[ext_resource type="Texture2D" uid="uid://ceg1oiq67lqjd" path="res://assets/levels11_15/bgnd2.png" id="3_hjvab"]
 [ext_resource type="Texture2D" uid="uid://dibj53i6bb0ge" path="res://assets/2d_light.webp" id="4_olvk5"]
-[ext_resource type="Texture2D" uid="uid://cn7u7qc1n7t6t" path="res://assets/levels11_15/bgnd3.png" id="4_s1nm3"]
 [ext_resource type="Script" path="res://scenes/Name_label.gd" id="4_ugjip"]
-[ext_resource type="Script" path="res://scenes/About_label.gd" id="5_4ojpu"]
+[ext_resource type="Script" path="res://scenes/help_label.gd" id="5_4ojpu"]
 [ext_resource type="Script" path="res://scenes/Start_btn.gd" id="5_ckdxp"]
 [ext_resource type="Texture2D" uid="uid://ctsmcuom8ig7m" path="res://assets/button/button.png" id="5_n6usu"]
-[ext_resource type="Texture2D" uid="uid://d1jrvsffjrnun" path="res://assets/levels11_15/bgnd4.png" id="5_wet8o"]
 [ext_resource type="Texture2D" uid="uid://3jxs3xpa4s6r" path="res://assets/button/button_pressed.png" id="6_l8ftt"]
 [ext_resource type="Texture2D" uid="uid://p0up8rfvj000" path="res://assets/button/button_n.png" id="6_yq2av"]
+[ext_resource type="Texture2D" uid="uid://b6xas4jha0883" path="res://assets/player/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00000.png" id="7_0gvkr"]
+[ext_resource type="FontFile" uid="uid://bf5p8ra1wyxnj" path="res://assets/font/KingdomCrown-lxdzD.otf" id="7_mrgja"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_85asg"]
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(600, 1, 1)
-particle_flag_disable_z = true
-gravity = Vector3(0, 98, 0)
 initial_velocity_min = 50.0
 initial_velocity_max = 50.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+gravity = Vector3(0, 98, 0)
 scale_min = 2.0
 scale_max = 3.0
 color = Color(0.751831, 0.74436, 0.736904, 1)
@@ -53,44 +49,10 @@ normal_texture = ExtResource("6_yq2av")
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_2l0mo")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-layer = -1
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-modulate = Color(0.787759, 0.787759, 0.787759, 1)
-position = Vector2(-240, 24)
-motion_mirroring = Vector2(2500, 600)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(858, 300)
-texture = ExtResource("2_1kouo")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(32, 7)
-motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(2500, 600)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(406, 311)
-texture = ExtResource("3_hjvab")
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(32, 7)
-motion_scale = Vector2(0.7, 0.7)
-motion_mirroring = Vector2(2500, 600)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(649, 316)
-texture = ExtResource("4_s1nm3")
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(32, 7)
-motion_scale = Vector2(0.9, 0.9)
-motion_mirroring = Vector2(2500, 600)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2(609, 313)
-texture = ExtResource("5_wet8o")
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
 
 [node name="ashes" type="GPUParticles2D" parent="."]
 position = Vector2(408, -24)
@@ -101,26 +63,39 @@ preprocess = 2.0
 fixed_fps = 60
 visibility_rect = Rect2(-100, -100, 800, 800)
 
+[node name="Hat" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(352, 99)
+rotation = 0.174533
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_0gvkr")
+region_enabled = true
+region_rect = Rect2(176, 120, 157, 98)
+
 [node name="Name" type="Label" parent="."]
+texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 456.0
-offset_top = 32.0
-offset_right = 695.0
-offset_bottom = 96.0
+offset_left = 336.0
+offset_top = 96.0
+offset_right = 822.0
+offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_colors/font_color = Color(0.431373, 0.360784, 0.494118, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 44
-text = "JELLY MAN!"
+theme_override_fonts/font = ExtResource("7_mrgja")
+theme_override_font_sizes/font_size = 55
+text = "Spellweaver's Quest"
 horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("4_ugjip")
 
 [node name="Start" type="TextureButton" parent="."]
+modulate = Color(0.431373, 0.360784, 0.494118, 1)
 offset_left = 456.0
 offset_top = 296.0
 offset_right = 686.0
@@ -130,15 +105,41 @@ texture_pressed = SubResource("CanvasTexture_li3f5")
 script = ExtResource("5_ckdxp")
 
 [node name="Label" type="Label" parent="Start"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 80.0
 offset_right = 145.0
 offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("7_mrgja")
 text = "START"
 label_settings = SubResource("LabelSettings_gw20s")
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Help" type="TextureButton" parent="."]
+modulate = Color(0.431373, 0.360784, 0.494118, 1)
+offset_left = 456.0
+offset_top = 384.0
+offset_right = 686.0
+offset_bottom = 423.0
+texture_normal = SubResource("CanvasTexture_qa5dp")
+texture_pressed = SubResource("CanvasTexture_li3f5")
+script = ExtResource("5_ckdxp")
+
+[node name="Label" type="Label" parent="Help"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 80.0
+offset_right = 145.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("7_mrgja")
+text = "HELP"
+label_settings = SubResource("LabelSettings_gw20s")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Exit" type="TextureButton" parent="."]
+modulate = Color(0.431373, 0.360784, 0.494118, 1)
 offset_left = 456.0
 offset_top = 472.0
 offset_right = 686.0
@@ -148,33 +149,19 @@ texture_pressed = SubResource("CanvasTexture_r51a3")
 script = ExtResource("5_ckdxp")
 
 [node name="Label" type="Label" parent="Exit"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 80.0
 offset_right = 145.0
 offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("7_mrgja")
 text = "EXIT"
 label_settings = SubResource("LabelSettings_gw20s")
 horizontal_alignment = 1
-
-[node name="About" type="TextureButton" parent="."]
-offset_left = 456.0
-offset_top = 384.0
-offset_right = 686.0
-offset_bottom = 423.0
-texture_normal = SubResource("CanvasTexture_qa5dp")
-texture_pressed = SubResource("CanvasTexture_li3f5")
-script = ExtResource("5_ckdxp")
-
-[node name="Label" type="Label" parent="About"]
-layout_mode = 0
-offset_left = 80.0
-offset_right = 145.0
-offset_bottom = 34.0
-text = "ABOUT"
-label_settings = SubResource("LabelSettings_gw20s")
-horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ver" type="Label" parent="."]
+texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -186,10 +173,13 @@ offset_right = 695.0
 offset_bottom = 624.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.431373, 0.360784, 0.494118, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_mrgja")
 theme_override_font_sizes/font_size = 20
-text = "Version 0.1"
+text = "Version 0.2"
 horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("5_4ojpu")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
@@ -200,4 +190,5 @@ texture_scale = 4.0
 height = 200.0
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
