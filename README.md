@@ -25,6 +25,7 @@ Assets used:
 
 - New levels and power up
 - Fix slow loading on later levels
+- Plant animations
 - Improve terrain hitboxes
 
 ## Screenshots
